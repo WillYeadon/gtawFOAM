@@ -1,0 +1,7 @@
+incompressibleThreePhaseMixture/incompressibleThreePhaseMixture.C
+threePhaseInterfaceProperties/threePhaseInterfaceProperties.C
+immiscibleIncompressibleThreePhaseMixture/immiscibleIncompressibleThreePhaseMixture.C
+heatSourceClass/heatSourceClass.C
+gtawFoam.C
+
+EXE = $(FOAM_USER_APPBIN)/gtawFoam
