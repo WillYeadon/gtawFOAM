@@ -70,6 +70,11 @@ const dimensionedScalar& cp3 = mixture.cp3();
 
 const dimensionedScalar& Lf = mixture.Lf();
 
+(void)T;
+(void)cp1;
+(void)cp2;
+(void)cp3;
+
 surfaceScalarField kf
 (
     IOobject
