@@ -13,12 +13,12 @@ IOdictionary transportPropertiesDict
 );
 
 bool alphaGeo(transportPropertiesDict.lookupOrDefault<bool>("alphaGeo", true));
-bool phaseChange(transportPropertiesDict.lookupOrDefault<bool>("phaseChange", true));
+//bool phaseChange(transportPropertiesDict.lookupOrDefault<bool>("phaseChange", true));
 bool LfSmoothing(transportPropertiesDict.lookupOrDefault<bool>("LfSmoothing", false));
 bool LfLimit(transportPropertiesDict.lookupOrDefault<bool>("LfLimit", false));
 
 (void)alphaGeo;
-(void)phaseChange;
+//(void)phaseChange;
 (void)LfSmoothing;
 (void)LfLimit;
 
@@ -335,6 +335,13 @@ dimensionedScalar dsigmadT
     "dsigmadT",
     dimensionSet(1,0,-2,-1,0,0,0),
     transportPropertiesDict.lookupOrDefault("dsigmadT", 0.0)
+);
+
+dimensionedScalar oneSecond
+(
+    "oneSecond",
+    dimensionSet(0,0,1,0,0,0,0),
+    1.0
 );
 
 volVectorField S_Marg

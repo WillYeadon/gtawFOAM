@@ -22,12 +22,16 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Application
-    interMixingFoam
+    gtawFOAM
 
 Description
-    Solver for 3 incompressible fluids, two of which are miscible, using a VOF
-    method to capture the interface, with optional mesh motion and mesh topology
-    changes including adaptive re-meshing.
+    Solver to simulated the Gas Tunsten Arc Welding process for n-metals using a 
+    VOF method combined with a separate goldak-type heat source. Solver is based
+    off of interFoam.
+
+    For extensive details see the thesis 'Multiphysics modelling of gas tungsten 
+    arc welding on ultra-thin-walled titanium tubing' at: 
+        https://etheses.whiterose.ac.uk/30719/ 
 
 \*---------------------------------------------------------------------------*/
 

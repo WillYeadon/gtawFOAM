@@ -83,10 +83,10 @@
             solve
             (
                 fvm::ddt(alpha2) + fvc::div(alpha2Phi)
-//** Comp **/                ==
-//** Comp **/                Su
+                ==
+//                Su
 //** Comp **/                + sFiller
-//                (Su + fvm::Sp(Sp + divU, alpha2))
+                (Su + fvm::Sp(Sp + divU, alpha2))
 //                + fvOptions(alpha2)
             );
 //** Comp **/        }
@@ -135,9 +135,9 @@
             solve
             (
                 fvm::ddt(alpha3) + fvc::div(alpha3Phi)
-//** Comp **/                ==
-//** Comp **/                dmdt/oneSecond
-//                (dmdt/oneSecond + fvm::Sp(dmdtSp/oneSecond + divU, alpha3))
+                ==
+//                dmdt/oneSecond
+                (dmdt/oneSecond + fvm::Sp(dmdtSp/oneSecond + divU, alpha3))
             );
 //** Comp **/
 //** Comp **/
@@ -194,18 +194,18 @@
 */
 
 /*
-*/
         volScalarField sumCorr(1.0 - sumAlpha);
         alpha1 += alpha1*sumCorr;
         alpha2 += alpha2*sumCorr;
         alpha3 += alpha3*sumCorr;
+*/
 
         alpha1 = max(min(alpha1, scalar(1)), scalar(0));
         alpha2 = max(min(alpha2, scalar(1)), scalar(0));
         alpha3 = max(min(alpha3, scalar(1)), scalar(0));
 
 //        #include "alphaClean.H"
-
+/*
         forAll(alpha1, i)
         {
             if (alpha1[i] < 1e-3)
@@ -215,7 +215,7 @@
             if (alpha3[i] < 1e-3)
                 alpha3[i] = 0.0;
         }
-
+*/
 //        alpha2 = 1.0 - alpha1 - alpha3;
 
         alphaMetalTotal = alpha2 + alpha3;
